@@ -1,0 +1,17 @@
+--1. Der Benutzer mit *Diaz Illiana*  hat neu die Email-Adresse *illiana.diaz@google.com*.
+update benutzer
+	set email='illiana.diaz@google.com'
+	where nachname='Diaz' and vorname='Illiana'
+--2. Der Benutzer *Hedwig Chambers* aus *Catanzaro* möchte aus der Datenbank gelöscht werden.
+delete from benutzer
+	where nachname='Hedwig' and vorname='Chambers';
+
+--3. Der Benutzer mit nachname  *Gamble* hat neu die Mobilenummer 079 415 17 18.
+update benutzer
+	set mobile='+41 79 415 17 18'
+	where nachname='Gamble'
+
+--4. Der Benutzer mit nachname  *Gamble* ist von Irland nach *8810 Horgen an die Seestrasse 16* gezogen. Seine Telefon ist 044 720 15 16. Seine Mobilenummer bleibt.
+update benutzer
+	set postleitzahl='8810', stadt = 'Horgen', adresse1 ='Seestrasse 16', land ='Switzerland'
+	where nachname='Gamble'

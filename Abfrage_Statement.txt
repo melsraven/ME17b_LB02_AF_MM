@@ -1,0 +1,18 @@
+-- 1. Geben Sie die Anzahl Tabellenzeilen aus.
+SELECT count(*) FROM benutzer;
+-- 2. Geben Sie alle Namen, Vornamen, Stadt und Telefonnummer der Benutzer aus.
+SELECT nachname, vorname, stadt, telefon FROM benutzer;
+-- 3. Geben Sie alle Staten (Nationen/Länder) aus, wo die Benutzer beiheimatet sind.
+select stadt, land from benutzer;
+-- 4. Geben Sie alle Staten (Nationen/Länder) aus, wo die Benutzer beiheimatet sind. Die Ausgabe ist alphabetisch absteigend nach Land sortiert.
+select stadt, land from benutzer ORDER BY land DESC ;
+-- 5. Geben Sie alle Benutzer mit Nachname und Telefonnummer aus, welche aus der Stadt Richmond kommen.
+SELECT nachname, telefon FROM benutzer where stadt = 'Richmond';
+-- 6. Geben Sie alle Benutzer mit Nachname und Telefonnummer aus, welche aus der Stadt Richmond kommen. Die Ausgabe ist alphabetisch aufsteigend nach Namen sortiert.
+SELECT nachname, telefon FROM benutzer where stadt = 'Richmond' order by nachname asc;
+-- 7. Geben Sie alle Benutzer mit Nachname, Vornamen, Telefonnummer und deren Nachname mit dem Buchstaben 'L' beginnt.
+SELECT nachname, vorname, stadt, telefon FROM benutzer where nachname like 'L%';
+-- 8. Geben Sie alle Benutzer mit Nachname, Vornamen, Telefonnummer und deren Telefonnummer die Zahl 67 enhält.
+SELECT nachname, vorname, stadt, telefon FROM benutzer where telefon like '%67%';
+-- 9. Geben Sie alle Benutzer mit Nachname, Vornamen, Telefonnummer und deren Telefonnummer mindestens die Ziffernfolge '02' zu Beginn der die Vorwahl enthält
+SELECT nachname, vorname, stadt, telefon FROM benutzer where telefon like '(02%';
